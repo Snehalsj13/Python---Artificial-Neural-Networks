@@ -66,7 +66,7 @@ def get_meanSquare_gradients_mse(X, Y, Y_hat):
     for an equation y = ax^2 + bx + c
     """
     # dL/da
-    a_gradient = np.sum(2*X**2*(Y_hat - Y), dtype=np.int32)/len(Y) ### Try removing the normalization factor len(Y)
+    a_gradient = np.sum(2*X**2*(Y_hat - Y), dtype=np.int32)/len(Y) 
     # dL/db
     b_gradient = np.sum(2*X*(Y_hat - Y), dtype=np.int32)/len(Y)
     # dL/dc
@@ -101,7 +101,7 @@ print "Estimates after {} iterations: a = {}, b = {}, c = {}".format(N, a, b, c)
 # In[81]:
 
 
-#Extra Credit
+#Using different loss function
 
 def get_meanSquareLog_gradients_mse(X, Y, Y_hat):
     """
@@ -110,7 +110,7 @@ def get_meanSquareLog_gradients_mse(X, Y, Y_hat):
     """
        
     # dL/da
-    a_gradient = np.sum(2*X**2*(np.log1p(Y_hat+1) - np.log1p(Y+1)), dtype=np.int32)/len(Y) ### Try removing the normalization factor len(Y)
+    a_gradient = np.sum(2*X**2*(np.log1p(Y_hat+1) - np.log1p(Y+1)), dtype=np.int32)/len(Y) 
     # dL/db
     b_gradient = np.sum(2*X*(np.log1p(Y_hat+1) - np.log1p(Y+1)), dtype=np.int32)/len(Y)
     # dL/dc
